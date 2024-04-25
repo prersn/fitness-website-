@@ -1,0 +1,274 @@
+{
+  "dishes": [
+    {
+      "name": "Grilled Chicken Salad",
+      "calories": 300,
+      "nutrientBreakdown": {
+        "protein": 30,
+        "carbs": 20,
+        "fat": 50
+      }
+    },
+    {
+      "name": "Quinoa and Vegetable Stir-Fry",
+      "calories": 350,
+      "nutrientBreakdown": {
+        "protein": 15,
+        "carbs": 60,
+        "fat": 25
+      }
+    },
+    {
+      "name": "Baked Salmon with Asparagus",
+      "calories": 400,
+      "nutrientBreakdown": {
+        "protein": 40,
+        "carbs": 15,
+        "fat": 45
+      }
+    },
+    {
+      "name": "Lentil Soup",
+      "calories": 250,
+      "nutrientBreakdown": {
+        "protein": 30,
+        "carbs": 50,
+        "fat": 20
+      }
+    },
+    {
+      "name": "Greek Yogurt Parfait with Berries and Granola",
+      "calories": 200,
+      "nutrientBreakdown": {
+        "protein": 20,
+        "carbs": 60,
+        "fat": 20
+      }
+    },
+    {
+      "name": "Turkey and Avocado Wrap",
+      "calories": 350,
+      "nutrientBreakdown": {
+        "protein": 25,
+        "carbs": 40,
+        "fat": 35
+      }
+    },
+    {
+      "name": "Roasted Sweet Potato and Chickpea Bowl",
+      "calories": 300,
+      "nutrientBreakdown": {
+        "protein": 15,
+        "carbs": 65,
+        "fat": 20
+      }
+    },
+    {
+      "name": "Shrimp and Broccoli Stir-Fry",
+      "calories": 250,
+      "nutrientBreakdown": {
+        "protein": 30,
+        "carbs": 25,
+        "fat": 45
+      }
+    },
+    {
+      "name": "Quinoa Salad with Mixed Vegetables",
+      "calories": 320,
+      "nutrientBreakdown": {
+        "protein": 20,
+        "carbs": 60,
+        "fat": 20
+      }
+    },
+    {
+      "name": "Caprese Salad with Balsamic Glaze",
+      "calories": 200,
+      "nutrientBreakdown": {
+        "protein": 15,
+        "carbs": 10,
+        "fat": 75
+      }
+    },
+    {
+      "name": "Turkey Chili",
+      "calories": 300,
+      "nutrientBreakdown": {
+        "protein": 35,
+        "carbs": 40,
+        "fat": 25
+      }
+    },
+    {
+      "name": "Egg and Spinach Omelette",
+      "calories": 200,
+      "nutrientBreakdown": {
+        "protein": 30,
+        "carbs": 10,
+        "fat": 60
+      }
+    },
+    {
+      "name": "Hummus and Veggie Wrap",
+      "calories": 250,
+      "nutrientBreakdown": {
+        "protein": 15,
+        "carbs": 55,
+        "fat": 30
+      }
+    },
+    {
+      "name": "Baked Cod with Lemon and Herbs",
+      "calories": 180,
+      "nutrientBreakdown": {
+        "protein": 25,
+        "carbs": 5,
+        "fat": 70
+      }
+    },
+    {
+      "name": "Spinach and Feta Stuffed Chicken Breast",
+      "calories": 280,
+      "nutrientBreakdown": {
+        "protein": 35,
+        "carbs": 10,
+        "fat": 55
+      }
+    },
+    {
+      "name": "Chickpea Salad with Cucumber and Tomato",
+      "calories": 220,
+      "nutrientBreakdown": {
+        "protein": 15,
+        "carbs": 60,
+        "fat": 25
+      }
+    },
+    {
+      "name": "Cauliflower Fried Rice with Tofu",
+      "calories": 280,
+      "nutrientBreakdown": {
+        "protein": 20,
+        "carbs": 50,
+        "fat": 30
+      }
+    },
+    {
+      "name": "Greek Chicken Souvlaki",
+      "calories": 320,
+      "nutrientBreakdown": {
+        "protein": 40,
+        "carbs": 10,
+        "fat": 50
+      }
+    },
+    {
+      "name": "Avocado and Black Bean Salad",
+      "calories": 300,
+      "nutrientBreakdown": {
+        "protein": 15,
+        "carbs": 55,
+        "fat": 30
+      }
+    },
+    {
+      "name": "Turkey and Vegetable Skewers",
+      "calories": 250,
+      "nutrientBreakdown": {
+        "protein": 30,
+        "carbs": 20,
+        "fat": 50
+      }
+    },
+    {
+      "name": "Baked Zucchini Noodles with Tomato Sauce",
+      "calories": 180,
+      "nutrientBreakdown": {
+        "protein": 15,
+        "carbs": 65,
+        "fat": 20
+      }
+    },
+    {
+      "name": "Miso Soup with Tofu and Seaweed",
+      "calories": 150,
+      "nutrientBreakdown": {
+        "protein": 15,
+        "carbs": 20,
+        "fat": 65
+      }
+    },
+    {
+      "name": "Broccoli and Cheddar Stuffed Sweet Potatoes",
+      "calories": 300,
+      "nutrientBreakdown": {
+        "protein": 15,
+        "carbs": 55,
+        "fat": 30
+      }
+    },
+    {
+      "name": "Almond-Crusted Baked Chicken Tenders",
+      "calories": 250,
+      "nutrientBreakdown": {
+        "protein": 30,
+        "carbs": 15,
+        "fat": 55
+      }
+    },
+    {
+      "name": "Mediterranean Quinoa Bowl",
+      "calories": 350,
+      "nutrientBreakdown": {
+        "protein": 20,
+        "carbs": 60,
+        "fat": 20
+      }
+    },
+    {
+      "name": "Teriyaki Tofu Stir-Fry",
+      "calories": 280,
+      "nutrientBreakdown": {
+        "protein": 25,
+        "carbs": 50,
+        "fat": 25
+      }
+    },
+    {
+      "name": "Cucumber and Avocado Sushi Rolls",
+      "calories": 200,
+      "nutrientBreakdown": {
+        "protein": 10,
+        "carbs": 40,
+        "fat": 50
+      }
+    },
+    {
+      "name": "Walnut and Cranberry Chicken Salad",
+      "calories": 320,
+      "nutrientBreakdown": {
+        "protein": 25,
+        "carbs": 20,
+        "fat": 55
+      }
+    },
+    {
+      "name": "Cauliflower Pizza with Vegetables",
+      "calories": 200,
+      "nutrientBreakdown": {
+        "protein": 15,
+        "carbs": 30,
+        "fat": 55
+      }
+    },
+    {
+      "name": "Thai Basil Chicken Stir-Fry",
+      "calories": 300,
+      "nutrientBreakdown": {
+        "protein": 30,
+        "carbs": 25,
+        "fat": 45
+      }
+    }
+  ]
+}

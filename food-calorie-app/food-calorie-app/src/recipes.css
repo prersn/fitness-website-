@@ -1,0 +1,52 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    color: black;
+}
+
+h1, h2, h3 {
+    color: black;
+}
+
+p {
+    color: black;
+}
+
+img {
+    max-width: 50%; /* Adjust the max-width for smaller images */
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-left {
+    float: left;
+    margin-right: 20px;
+}
+
+.image-right {
+    float: right;
+    margin-left: 20px;
+}
+#a
+{
+    height: 300px;
+    width:400px;
+}
+#quinoa
+{
+   padding-left:20px;
+}
+#qui
+{
+height:500px;
+width:300px;
+}
+#sal
+{
+ height:300px;
+ width:500px
+}

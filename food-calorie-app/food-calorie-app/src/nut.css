@@ -1,0 +1,9 @@
+/* nut.css */
+
+/* Style for images inside nut.js */
+img {
+  max-width: 500px; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+   /* Set a maximum height for the images */
+}
+

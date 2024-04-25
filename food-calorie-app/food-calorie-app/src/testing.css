@@ -1,0 +1,46 @@
+/* TestingConsultationApp.css */
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+#app-bar {
+  background-color: #E5788F;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+#testing-section,
+#packages-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.circle-container {
+  text-align: center;
+}
+
+.circle-image {
+  width: 100px; /* Adjust the width as needed */
+  height: 100px; /* Adjust the height as needed */
+  border-radius: 10px; /* Keep a small border-radius for curved edges */
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.circle-name {
+  font-size: 16px;
+}
+
+.header-content {
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Change to column */
+  align-items: center;
+}

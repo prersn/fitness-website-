@@ -1,0 +1,75 @@
+/* styles.css */
+
+body {
+  margin: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#top-bar {
+  background-color: #2b2929;
+  padding: 7px;
+  color: rgb(54, 52, 52);
+  text-align: center;
+  font-size: 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  width: 75px;
+  margin-right: auto;
+}
+
+#auth-links {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+#auth-links a {
+  color: white;
+  text-decoration: none;
+}
+
+#auth-links a:hover {
+  color: #3d3c3a;
+}
+
+#menu-bar {
+  background-color: #e9edc9;
+  padding: 3px;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+}
+
+#menu-bar a {
+  color: #3d3c3a;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+#menu-bar a:hover {
+  color: #68a989;
+}
+
+#top-bar a[href="about-us"],
+#top-bar a[href="contact-us"] {
+  color: white;
+  text-decoration: none;
+}
+
+#top-bar a[href="about-us"]:hover,
+#top-bar a[href="contact-us"]:hover {
+  color: #3d3c3a;
+}
+
+
+#result-container {
+  text-align: center;
+}
+
+#error-message {
+  color: rgb(213, 77, 77);
+}

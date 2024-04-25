@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise </title>
+  <link rel="stylesheet" href="exercise1.css">
+</head>
+
+<body>
+  <header>
+    <h1>Exercises </h1>
+  </header>
+  <main>
+    <div class="exercise-card">
+      <h2>Exercise of the Day</h2>
+      <img src="ex_of_day.gif" alt="Exercise Image" />
+    </div>
+
+    <div class="workout-card">
+      <h2>Workout of the Day</h2>
+      <img src="work_of_day.jpg" alt="Workout Image" />
+    </div>
+
+    <div class="challenge-card">
+      <h2>Monthly Challenge</h2>
+      <img src="mon_chall.gif" alt="Challenge Image" />
+    </div>
+
+    <section class="search-section">
+      <label for="exercise-search">Search for an exercise:</label>
+      <input type="text" id="exercise-search" placeholder="Enter exercise name">
+      <button id="search-button" onclick="performSearch()">Search</button>
+    </section>
+
+    <section class="results-section" id="results-section">
+      <h2 id="search-results-heading" style="display: none;">Search Results</h2>
+      <ul id="exercise-results"></ul>
+      <p id="no-results-message" style="display: none;">No results found.</p>
+    </section>
+
+    <section id="total-calories-section">
+      <h2>Total Calories</h2>
+      <div id="total-calories-details"></div>
+      <p>Total Calories: <span id="total-calories">0</span></p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Exercise Lookup. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+<!--
+  <script type="text/babel">
+    // React component for exercise result
+    const ExerciseResult = ({ exerciseName, description, detailedStepsLink, caloriesBurned }) => {
+      const toggleAnswer = (answerId) => {
+        const answerElement = document.getElementById(answerId);
+        answerElement.style.display = answerElement.style.display === 'none' || answerElement.style.display === '' ? 'block' : 'none';
+      };
+
+      return (
+        <div className="question" onClick={() => toggleAnswer(exerciseName)} style={{ cursor: 'pointer' }}>
+          <h3>{exerciseName}</h3>
+          <div id={exerciseName} className="answer" style={{ display: 'none' }}>
+            <p>{description}</p>
+            <p>For detailed steps, visit: <a href={detailedStepsLink} target="_blank">Exercise Steps</a></p>
+            <p>Calories burned in 60 minutes: {caloriesBurned}</p>
+            <button onClick={() => addExerciseCalories(exerciseName, caloriesBurned)}>Add Calories</button>
+          </div>
+        </div>
+      );
+    };
+
+    // Additional function to add calories for a specific exercise
+    function addExerciseCalories(exerciseName, caloriesBurned) {
+      const totalCaloriesElement = document.getElementById('total-calories');
+      const totalCaloriesDetails = document.getElementById('total-calories-details');
+      let currentTotalCalories = parseInt(totalCaloriesElement.textContent, 10);
+
+      // Display the exercise and calories in the total calories details
+      const exerciseDetails = document.createElement('p');
+      exerciseDetails.textContent = `${exerciseName}: ${caloriesBurned} calories`;
+      totalCaloriesDetails.appendChild(exerciseDetails);
+
+      // Update the total calories display
+      currentTotalCalories += caloriesBurned;
+      totalCaloriesElement.textContent = currentTotalCalories;
+    }
+
+    // Perform search function
+    function performSearch() {
+      const searchInput = document.getElementById('exercise-search');
+      const searchResults = document.getElementById('exercise-results');
+      const searchResultsHeading = document.getElementById('search-results-heading');
+      const noResultsMessage = document.getElementById('no-results-message');
+      const resultsSection = document.getElementById('results-section');
+      const exercises = [
+        { exerciseName: 'Push-ups', description: 'Description for Push-ups.', detailedStepsLink: 'https://example.com/push-ups', caloriesBurned: 200 },
+        { exerciseName: 'Squats', description: 'Description for Squats.', detailedStepsLink: 'https://example.com/squats', caloriesBurned: 150 },
+        { exerciseName: 'Jumping Jacks', description: 'Description for Jumping Jacks.', detailedStepsLink: 'https://example.com/jumping-jacks', caloriesBurned: 100 },
+        { exerciseName: 'Burpees', description: 'Description for Burpees.', detailedStepsLink: 'https://example.com/burpees', caloriesBurned: 250 },
+        { exerciseName: 'Plank', description: 'Description for Plank.', detailedStepsLink: 'https://example.com/plank', caloriesBurned: 120 },
+        { exerciseName: 'Running', description: 'Description for Running.', detailedStepsLink: 'https://example.com/running', caloriesBurned: 300 },
+        { exerciseName: 'Cycling', description: 'Description for Cycling.', detailedStepsLink: 'https://example.com/cycling', caloriesBurned: 180 },
+        { exerciseName: 'Lunges', description: 'Description for Lunges.', detailedStepsLink: 'https://example.com/lunges', caloriesBurned: 160 },
+        { exerciseName: 'Yoga', description: 'Description for Yoga.', detailedStepsLink: 'https://example.com/yoga', caloriesBurned: 90 },
+        { exerciseName: 'Swimming', description: 'Description for Swimming.', detailedStepsLink: 'https://example.com/swimming', caloriesBurned: 250 },
+        { exerciseName: 'Rowing', description: 'Description for Rowing.', detailedStepsLink: 'https://example.com/rowing', caloriesBurned: 220 },
+        { exerciseName: 'Jump Rope', description: 'Description for Jump Rope.', detailedStepsLink: 'https://example.com/jump-rope', caloriesBurned: 130 },
+        { exerciseName: 'Biking', description: 'Description for Biking.', detailedStepsLink: 'https://example.com/biking', caloriesBurned: 170 },
+        { exerciseName: 'Deadlifts', description: 'Description for Deadlifts.', detailedStepsLink: 'https://example.com/deadlifts', caloriesBurned: 240 },
+        { exerciseName: 'Bench Press', description: 'Description for Bench Press.', detailedStepsLink: 'https://example.com/bench-press', caloriesBurned: 190 },
+        { exerciseName: 'Sit-ups', description: 'Description for Sit-ups.', detailedStepsLink: 'https://example.com/sit-ups', caloriesBurned: 140 },
+        { exerciseName: 'Mountain Climbers', description: 'Description for Mountain Climbers.', detailedStepsLink: 'https://example.com/mountain-climbers', caloriesBurned: 110 },
+        { exerciseName: 'Dumbbell Curls', description: 'Description for Dumbbell Curls.', detailedStepsLink: 'https://example.com/dumbbell-curls', caloriesBurned: 160 },
+        { exerciseName: 'Leg Press', description: 'Description for Leg Press.', detailedStepsLink: 'https://example.com/leg-press', caloriesBurned: 210 },
+        { exerciseName: 'Jump Squats', description: 'Description for Jump Squats.', detailedStepsLink: 'https://example.com/jump-squats', caloriesBurned: 170 },
+      ];
+
+      // Clear previous search results and messages
+      searchResults.innerHTML = '';
+      noResultsMessage.style.display = 'none';
+
+      // Perform search
+      const searchTerm = searchInput.value.toLowerCase();
+      const filteredExercises = exercises.filter(exercise => exercise.exerciseName.toLowerCase().includes(searchTerm));
+
+      // Display search results
+      filteredExercises.forEach(exercise => {
+        const listItem = document.createElement('li');
+        ReactDOM.render(
+          <ExerciseResult
+            key={exercise.exerciseName}
+            exerciseName={exercise.exerciseName}
+            description={exercise.description}
+            detailedStepsLink={exercise.detailedStepsLink}
+            caloriesBurned={exercise.caloriesBurned}
+          />,
+          listItem
+        );
+        searchResults.appendChild(listItem);
+      });
+
+      // Show search results heading only when the search button is clicked
+      searchResultsHeading.style.display = 'block';
+      // Show no results message if no results are found
+      noResultsMessage.style.display = filteredExercises.length === 0 ? 'block' : 'none';
+      // Show results section
+      resultsSection.style.display = 'block';
+    }
+  </script>-->
+  
+  <script type="text/babel">
+    // React component for exercise result
+    const ExerciseResult = ({ exerciseName, detailedStepsLink, caloriesBurned }) => {
+      const toggleAnswer = (answerId) => {
+        const answerElement = document.getElementById(answerId);
+        answerElement.style.display = answerElement.style.display === 'none' || answerElement.style.display === '' ? 'block' : 'none';
+      };
+
+      return (
+        <div className="question" onClick={() => toggleAnswer(exerciseName)} style={{ cursor: 'pointer' }}>
+          <h3>{exerciseName}</h3>
+          <div id={exerciseName} className="answer" style={{ display: 'none' }}>
+            <p>For detailed steps, visit: <a href={detailedStepsLink} target="_blank">Exercise Steps</a></p>
+            <p>Calories burned in 60 minutes: {caloriesBurned}</p>
+            <button onClick={() => addExerciseCalories(exerciseName, caloriesBurned)}>Add Calories</button>
+          </div>
+        </div>
+      );
+    };
+
+    // Additional function to add calories for a specific exercise
+    function addExerciseCalories(exerciseName, caloriesBurned) {
+      const totalCaloriesElement = document.getElementById('total-calories');
+      const totalCaloriesDetails = document.getElementById('total-calories-details');
+      let currentTotalCalories = parseInt(totalCaloriesElement.textContent, 10);
+
+      // Display the exercise and calories in the total calories details
+      const exerciseDetails = document.createElement('p');
+      exerciseDetails.textContent = `${exerciseName}: ${caloriesBurned} calories`;
+      totalCaloriesDetails.appendChild(exerciseDetails);
+
+      // Update the total calories display
+      currentTotalCalories += caloriesBurned;
+      totalCaloriesElement.textContent = currentTotalCalories;
+    }
+
+    // Perform search function
+    function performSearch() {
+      const searchInput = document.getElementById('exercise-search');
+      const searchResults = document.getElementById('exercise-results');
+      const searchResultsHeading = document.getElementById('search-results-heading');
+      const noResultsMessage = document.getElementById('no-results-message');
+      const resultsSection = document.getElementById('results-section');
+      const exercises = [
+        { exerciseName: 'Push-ups', description: 'Description for Push-ups.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 200 },
+        { exerciseName: 'Squats', description: 'Description for Squats.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 150 },
+        { exerciseName: 'Jumping Jacks', description: 'Description for Jumping Jacks.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 100 },
+        { exerciseName: 'Burpees', description: 'Description for Burpees.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 250 },
+        { exerciseName: 'Plank', description: 'Description for Plank.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 120 },
+        { exerciseName: 'Running', description: 'Description for Running.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 300 },
+        { exerciseName: 'Cycling', description: 'Description for Cycling.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 180 },
+        { exerciseName: 'Lunges', description: 'Description for Lunges.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 160 },
+        { exerciseName: 'Yoga', description: 'Description for Yoga.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 90 },
+        { exerciseName: 'Swimming', description: 'Description for Swimming.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 250 },
+        { exerciseName: 'Rowing', description: 'Description for Rowing.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 220 },
+        { exerciseName: 'Jump Rope', description: 'Description for Jump Rope.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 130 },
+        { exerciseName: 'Biking', description: 'Description for Biking.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 170 },
+        { exerciseName: 'Deadlifts', description: 'Description for Deadlifts.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 240 },
+        { exerciseName: 'Bench Press', description: 'Description for Bench Press.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 190 },
+        { exerciseName: 'Sit-ups', description: 'Description for Sit-ups.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 140 },
+        { exerciseName: 'Mountain Climbers', description: 'Description for Mountain Climbers.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 110 },
+        { exerciseName: 'Dumbbell Curls', description: 'Description for Dumbbell Curls.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 160 },
+        { exerciseName: 'Leg Press', description: 'Description for Leg Press.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 210 },
+        { exerciseName: 'Jump Squats', description: 'Description for Jump Squats.', detailedStepsLink: 'https://www.acefitness.org/resources/everyone/exercise-library/', caloriesBurned: 170 },
+      ];
+
+      // Clear previous search results and messages
+      searchResults.innerHTML = '';
+      noResultsMessage.style.display = 'none';
+
+      // Perform search
+      const searchTerm = searchInput.value.toLowerCase();
+      const filteredExercises = exercises.filter(exercise => exercise.exerciseName.toLowerCase().includes(searchTerm));
+
+      // Display search results
+      filteredExercises.forEach(exercise => {
+        const listItem = document.createElement('li');
+        ReactDOM.render(
+          <ExerciseResult
+            key={exercise.exerciseName}
+            exerciseName={exercise.exerciseName}
+            detailedStepsLink={exercise.detailedStepsLink}
+            caloriesBurned={exercise.caloriesBurned}
+          />,
+          listItem
+        );
+        searchResults.appendChild(listItem);
+      });
+
+      // Show search results heading only when the search button is clicked
+      searchResultsHeading.style.display = 'block';
+      // Show no results message if no results are found
+      noResultsMessage.style.display = filteredExercises.length === 0 ? 'block' : 'none';
+      // Show results section
+      resultsSection.style.display = 'block';
+    }
+  </script>
+</body>
+
+</html>
+

@@ -1,0 +1,80 @@
+.eyeCheckupPage {
+    color:rgb(68, 64, 64)
+  }
+  
+  .titleContainer {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 245);
+    padding: 5px; /* Add padding for better spacing */
+  }
+  
+  .labelContainer {
+    margin-right: 20px;
+    background-color: rgb(255, 255, 245); /* Adjust spacing between label and title */
+  }
+  
+  .labelImage {
+    width: 700px; /* Adjust the width of the label image */
+    height: auto;
+  }
+  
+  .titleContentContainer {
+    font-size: 30px;
+    text-align: center; /* Center-align the text */
+  }
+  
+  .Book,
+  .whyBook,
+  .howOften,
+  .whatDetect {
+    text-align: center; /* Center-align the text for these sections */
+    padding: 20px; /* Add padding for better spacing */
+    font-size: 20px;
+  }
+  
+  .howOften {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 245); 
+    font-size: 21px;
+    align-items: center;
+  }
+  
+  .howOften img {
+    width: 450px; /* Adjust the width of the image */
+    height: auto;
+
+  }
+  
+  .featuresContainer h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .featuresContainer ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .featuresContainer li {
+    margin-bottom: 10px;
+  }
+  
+  .featuresContainer a {
+    text-decoration: none;
+    color: #007bff; /* Adjust the link color as needed */
+    font-weight: bold;
+    display: block;
+  }
+  
+  .featuresContainer a:hover {
+    text-decoration: underline;
+  }
+  
+  .featuresContainer p {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  
