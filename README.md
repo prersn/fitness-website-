@@ -8,7 +8,7 @@ Fitness website is a full-stack web application built with React for the fronten
 - Exercise page (including calorie it burns etc)
 - Blogs categorized based on exercise, food, etc
 - About us page
-- Testing and Consultation page
+- Testing and Consultation page (not actual)
 
 ## Technologies Used
 
